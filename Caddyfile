@@ -5,20 +5,6 @@ m9d2.cn {
 }
 
 v2ray.m9d2.cn {
-	tls {
-		protocols tls1.2 tls1.3
-		ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
-		curves x25519
-	}
-
-	@v2ray_websocket {
-		path /ws
-		header Connection Upgrade
-		header Upgrade websocket
-	}
-
-	reverse_proxy @v2ray_websocket localhost:20000
-
 	reverse_proxy localhost:54321
 }
 
@@ -30,18 +16,10 @@ share.m9d2.cn {
 	}
 }
 
-blog.m9d2.cn {
-	reverse_proxy m9d2.github.io
-}
-
 alist.m9d2.cn {
 	reverse_proxy 127.0.0.1:5244
 }
 
 frp.m9d2.cn {
 	reverse_proxy 127.0.0.1:6443
-}
-
-frp.innjoysmart.com {
-        reverse_proxy 127.0.0.1:6443
 }
