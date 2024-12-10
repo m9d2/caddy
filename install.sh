@@ -37,3 +37,7 @@ echo "Caddy installation and setup complete!"
 
 echo "Install x-ui"
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+echo "Install frp"
+wget https://raw.githubusercontent.com/mvscode/frps-onekey/master/install-frps.sh -O ./install-frps.sh
+chmod 700 ./install-frps.sh
+./install-frps.sh install
