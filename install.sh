@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "Prepare to create a directory"
+sudo mkdir -p /data/html
+sudo mkdir -p /data/share
+
 # 更新并安装必要的软件包
 echo "Installing prerequisites..."
 sudo apt update
@@ -30,3 +34,6 @@ sudo systemctl restart caddy
 sudo systemctl enable caddy
 
 echo "Caddy installation and setup complete!"
+
+echo "Install x-ui"
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
